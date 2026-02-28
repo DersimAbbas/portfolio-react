@@ -1,0 +1,35 @@
+.codeBlock {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: Consolas, 'Courier New', monospace;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Keyword: resource, provider, etc. */
+.tfKeyword {
+  color: #c586c0;
+}
+
+/* Strings */
+.tfString {
+  color: #ce9178;
+}
+
+/* Properties: name, experience, skill_level, etc. */
+.tfProperty {
+  color: #9cdcfe;
+}
+
+/* Numbers */
+.tfNumber {
+  color: #b5cea8;
+}
+
+/* Comments */
+.tfComment {
+  color: #6a9955;
+}
