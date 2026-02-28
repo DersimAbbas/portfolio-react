@@ -56,7 +56,7 @@ export default function Skills() {
 
       <div
         className="container-fluid p-5"
-        style={{ zIndex: 500, position: 'relative', paddingBottom: '250px' }}
+        style={{ zIndex: 500, position: 'relative' }}
       >
         <div className="text-center">
           <h3>Technology Dashboard</h3>
@@ -93,11 +93,11 @@ export default function Skills() {
             Show skills As IAC
           </button>
         </div>
+      </div>
 
-        {/* Navigation Buttons */}
-        <div className="d-flex justify-content-center gap-4 mb-2">
-          <NavigateButtons />
-        </div>
+      {/* Navigation Buttons - outside container for proper spacing */}
+      <div className="d-flex justify-content-center gap-4" style={{ paddingBottom: '250px' }}>
+        <NavigateButtons />
       </div>
 
       <DevOpsTerminal />
