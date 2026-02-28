@@ -1,0 +1,54 @@
+.terminal {
+  width: 100% !important;
+  font-family: 'Fira Code', monospace;
+  overflow: auto;
+  background-color: #1e1e1e;
+  max-height: 30vh;
+}
+
+.terminalHeader {
+  border-bottom: 1px solid #333;
+}
+
+.pathDisplay {
+  font-weight: bold;
+  color: #00ffaa;
+}
+
+.logOutput {
+  height: 150px;
+  overflow-y: auto;
+  background-color: #121212;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #00ffaa;
+  font-size: 0.85rem;
+  border: 1px solid #333;
+}
+
+.logOutput a {
+  color: #00bfff;
+  text-decoration: underline;
+}
+
+.logOutput a:hover {
+  color: #87ceeb;
+}
+
+.commandInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00ff7f;
+  font-size: 1.2rem;
+}
+
+.commandInput:focus {
+  outline: none;
+}
+
+/* Form control placeholder */
+.terminal input::placeholder {
+  color: #00ff7f;
+  opacity: 0.6;
+}
