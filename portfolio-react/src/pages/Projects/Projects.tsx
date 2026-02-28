@@ -71,7 +71,7 @@ export default function Projects() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="d-flex justify-content-center mt-3 mb-5">
+      <div className="d-flex justify-content-center mt-3" style={{ paddingBottom: '250px' }}>
         <NavigateButtons />
       </div>
 
