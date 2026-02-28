@@ -16,17 +16,25 @@ export default function Home() {
 
     element.innerHTML = '';
     let i = 0;
+    let timeoutId: ReturnType<typeof setTimeout>;
+    let cancelled = false;
 
     const typeNext = () => {
+      if (cancelled) return;
       if (i < text.length) {
         element.innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeNext, 40);
+        timeoutId = setTimeout(typeNext, 40);
       }
     };
 
     // Start with a small delay
-    setTimeout(typeNext, 250);
+    timeoutId = setTimeout(typeNext, 250);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Load particles.js

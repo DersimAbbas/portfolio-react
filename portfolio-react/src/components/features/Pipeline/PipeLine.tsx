@@ -27,6 +27,7 @@ const PipeLine = forwardRef<PipeLineHandle, PipeLineProps>(
       'Waiting to start pipeline...'
     );
     const [progress, setProgress] = useState(0);
+    const progressRef = useRef(0);
     const { addLog } = useTerminal();
     const progressBarRef = useRef<HTMLDivElement>(null);
 
@@ -38,6 +39,7 @@ const PipeLine = forwardRef<PipeLineHandle, PipeLineProps>(
         );
         setCurrentJobStatus('Waiting to start pipeline...');
         setProgress(0);
+        progressRef.current = 0;
 
         await new Promise((r) => setTimeout(r, 250));
         addLog('[INFO] Starting pipeline...');
@@ -67,13 +69,14 @@ const PipeLine = forwardRef<PipeLineHandle, PipeLineProps>(
 
         setShowProgressBar(false);
         setProgress(0);
+        progressRef.current = 0;
         setIsRunning(false);
       },
     }));
 
     const animateProgress = (target: number, duration: number): Promise<void> => {
       return new Promise((resolve) => {
-        const start = progress;
+        const start = progressRef.current;
         const startTime = performance.now();
 
         const animate = (currentTime: number) => {
@@ -81,6 +84,7 @@ const PipeLine = forwardRef<PipeLineHandle, PipeLineProps>(
           const progressFraction = Math.min(elapsed / duration, 1);
           const currentProgress = start + (target - start) * progressFraction;
 
+          progressRef.current = currentProgress;
           setProgress(currentProgress);
 
           if (progressFraction < 1) {

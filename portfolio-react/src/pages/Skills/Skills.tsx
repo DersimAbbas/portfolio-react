@@ -55,7 +55,7 @@ export default function Skills() {
 
       <div
         className="container-fluid p-5"
-        style={{ zIndex: 500, position: 'relative' }}
+        style={{ zIndex: 500, position: 'relative', paddingBottom: '250px' }}
       >
         <div className="text-center">
           <h3>Technology Dashboard</h3>

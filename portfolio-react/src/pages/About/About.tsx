@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { usePipelineStages } from '../../hooks/useTechs';
 import PipeLine, {
   PipeLineHandle,
-} from '../../components/features/Pipeline/PipeLine';
+} from '../../components/features/Pipeline/Pipeline';
 import NavigateButtons from '../../components/common/NavigateButtons/NavigateButtons';
 import DevOpsTerminal from '../../components/common/DevOpsTerminal/DevOpsTerminal';
 import styles from './About.module.css';
