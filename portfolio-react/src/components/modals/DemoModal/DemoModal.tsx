@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useState, useRef, useEffect } from 'react';
+import { forwardRef, useImperativeHandle, useState, useRef, useEffect, useCallback } from 'react';
 import { TechsModel } from '../../../types';
 
 export interface DemoModalHandle {
@@ -17,10 +17,16 @@ const DemoModal = forwardRef<DemoModalHandle>((_, ref) => {
     },
   }));
 
+  const handleClose = useCallback(() => {
+    setIsVisible(false);
+    setSelectedProject(null);
+  }, []);
+
   // Handle Bootstrap modal via vanilla JS
   useEffect(() => {
     if (isVisible && modalRef.current) {
-      const bootstrap = (window as any).bootstrap;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const bootstrap = (window as unknown as { bootstrap: any }).bootstrap;
       if (bootstrap) {
         const modal = new bootstrap.Modal(modalRef.current);
         modal.show();
@@ -29,12 +35,7 @@ const DemoModal = forwardRef<DemoModalHandle>((_, ref) => {
         modalRef.current.addEventListener('hidden.bs.modal', handleClose);
       }
     }
-  }, [isVisible]);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    setSelectedProject(null);
-  };
+  }, [isVisible, handleClose]);
 
   return (
     <div

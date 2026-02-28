@@ -23,8 +23,7 @@ const commandList = [
 export default function DevOpsTerminal() {
   const [command, setCommand] = useState('');
   const [currentPrompt, setCurrentPrompt] = useState(prompts[0]);
-  const [promptIndex, setPromptIndex] = useState(0);
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [, setPromptIndex] = useState(0);
   const [enterUsername, setEnterUsername] = useState(false);
   const [enterPassword, setEnterPassword] = useState(false);
   const [username, setUsername] = useState('');
@@ -68,7 +67,6 @@ export default function DevOpsTerminal() {
     if (enterPassword) {
       addLog('[INFO] Authenticating...');
       setEnterPassword(false);
-      setIsAuthenticating(false);
 
       const success = await login({ username, password: command });
       if (success) {
@@ -131,7 +129,6 @@ export default function DevOpsTerminal() {
 
       case 'sudo admin':
         addLog('[INFO] Enter UserName:');
-        setIsAuthenticating(true);
         setEnterUsername(true);
         setCommand('');
         return;

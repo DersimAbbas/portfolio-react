@@ -22,6 +22,7 @@ export default function Admin() {
     cloudsLoaded.current = true;
 
     const loadClouds = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const particlesJS = (window as any).particlesJS;
       if (particlesJS) {
         particlesJS.load('cloud-js', '/cloud.json', () => {
@@ -38,6 +39,7 @@ export default function Admin() {
     if (weatherLoaded.current || !isAuthenticated) return;
     weatherLoaded.current = true;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const win = window as any;
     if (!win.myWidgetParam) {
       win.myWidgetParam = [];

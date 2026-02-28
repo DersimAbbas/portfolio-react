@@ -28,6 +28,7 @@ export default function Skills() {
     cloudsLoaded.current = true;
 
     const loadClouds = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const particlesJS = (window as any).particlesJS;
       if (particlesJS) {
         particlesJS.load('cloud-js', '/cloud.json', () => {

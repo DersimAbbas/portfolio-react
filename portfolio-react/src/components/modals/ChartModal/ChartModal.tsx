@@ -4,6 +4,7 @@ import {
   useState,
   useRef,
   useEffect,
+  useCallback,
 } from 'react';
 import {
   Chart as ChartJS,
@@ -17,7 +18,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { TechsModel } from '../../../types';
-import styles from './ChartModal.module.css';
 
 // Register Chart.js components
 ChartJS.register(
@@ -51,10 +51,17 @@ const ChartModal = forwardRef<ChartModalHandle, ChartModalProps>(
       },
     }));
 
+    const handleClose = useCallback(() => {
+      setIsVisible(false);
+      setSelectedSkill(null);
+      onCloseModal?.();
+    }, [onCloseModal]);
+
     // Handle Bootstrap modal via vanilla JS
     useEffect(() => {
       if (isVisible && modalRef.current) {
-        const bootstrap = (window as any).bootstrap;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const bootstrap = (window as unknown as { bootstrap: any }).bootstrap;
         if (bootstrap) {
           const modal = new bootstrap.Modal(modalRef.current);
           modal.show();
@@ -63,13 +70,7 @@ const ChartModal = forwardRef<ChartModalHandle, ChartModalProps>(
           modalRef.current.addEventListener('hidden.bs.modal', handleClose);
         }
       }
-    }, [isVisible]);
-
-    const handleClose = () => {
-      setIsVisible(false);
-      setSelectedSkill(null);
-      onCloseModal?.();
-    };
+    }, [isVisible, handleClose]);
 
     const buildChartData = () => {
       if (!selectedSkill) {

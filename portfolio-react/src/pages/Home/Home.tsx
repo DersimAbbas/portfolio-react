@@ -43,6 +43,7 @@ export default function Home() {
     particlesLoaded.current = true;
 
     const loadParticles = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const particlesJS = (window as any).particlesJS;
       if (particlesJS) {
         particlesJS.load('particles-js', '/particles.json', () => {
