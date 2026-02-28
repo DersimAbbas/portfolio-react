@@ -4,8 +4,8 @@ import { apiClient } from '../api/apiClient';
 import { mockTechs, mockProjects } from '../data/mockTechs';
 import { mockPipelineStages } from '../data/mockPipelineStages';
 
-// Set to true to use mock data, false to use real API
-const USE_MOCK_DATA = true;
+// Use mock data if VITE_USE_MOCK_DATA is 'true' or if API URL is not set
+const USE_MOCK_DATA = import.meta.env.VITE_USE_MOCK_DATA === 'true' || !import.meta.env.VITE_API_URL;
 
 // Fetch all techs (skills + projects)
 export const useTechs = () => {

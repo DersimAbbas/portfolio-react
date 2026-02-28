@@ -59,7 +59,7 @@ export const apiClient = {
 
   // Update existing tech
   async updateTech(id: string, updatedTech: TechsModel): Promise<boolean> {
-    const response = await fetch(`${API_BASE_URL}/api/updatetech/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/updatetech${id}`, {
       method: 'PUT',
       headers: getAuthHeaders(),
       body: JSON.stringify(updatedTech),
