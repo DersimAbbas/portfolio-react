@@ -1,0 +1,177 @@
+/* Global Styles - Dark Theme Portfolio */
+
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #eee;
+  font-size: 18px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Font Classes */
+.jetbrains {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.ibmplex {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.firacode {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Typography */
+h2 {
+  margin-bottom: 10px;
+}
+
+a,
+.btn-link {
+  color: #006bb7;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+h1:focus {
+  outline: none;
+}
+
+/* Form Validation */
+.valid.modified:not([type='checkbox']) {
+  outline: 1px solid #26b050;
+}
+
+.invalid {
+  outline: 1px solid #e50000;
+}
+
+.validation-message {
+  color: #e50000;
+}
+
+/* App Root */
+.app-root {
+  max-height: 100vh;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* Technology Background Colors */
+.bg-blazor {
+  background-color: rgba(90, 32, 186, 0.38);
+}
+
+.bg-react {
+  background-color: rgba(74, 220, 211, 0.76);
+}
+
+.bg-csharp {
+  background-color: rgba(99, 46, 134, 0.8);
+}
+
+.bg-docker {
+  background-color: rgba(0, 117, 177, 0.8);
+}
+
+.bg-terraform {
+  background-color: rgba(93, 61, 178, 0.8);
+}
+
+.bg-python {
+  background-color: rgba(0, 84, 135, 0.8);
+}
+
+.bg-sql {
+  background-color: rgba(0, 84, 135, 0.8);
+}
+
+.bg-azure {
+  background-color: rgba(0, 120, 212, 0.8);
+}
+
+.bg-kubernetes {
+  background-color: rgba(50, 112, 214, 0.8);
+}
+
+.bg-mongodb {
+  background-color: rgba(77, 182, 172, 0.8);
+}
+
+.bg-firebase {
+  background-color: rgba(255, 167, 38, 0.8);
+}
+
+.bg-restapi {
+  background-color: rgba(0, 150, 136, 0.8);
+}
+
+.bg-nodejs {
+  background-color: rgba(9, 180, 70, 0.8);
+}
+
+.bg-aws {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-default {
+  background-color: rgba(21, 20, 20, 0.8);
+}
+
+/* Skill Card Animations */
+.skill-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Particles/Cloud Container */
+#particles-js,
+#cloud-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Admin Layout Backgrounds */
+.gradient-sky-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(25, 104, 190, 0.8),
+    rgba(70, 130, 180, 0.7)
+  );
+}
+
+.deep-sky-bg {
+  background: rgba(30, 144, 255, 0.7);
+}
+
+.twilight-sky-bg {
+  background: rgba(25, 104, 190, 0.8);
+}
+
+.nightfall-sky-bg {
+  background: rgba(15, 82, 186, 0.9);
+}
