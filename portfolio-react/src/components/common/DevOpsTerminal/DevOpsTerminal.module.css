@@ -47,6 +47,17 @@
   outline: none;
 }
 
+@media (max-width: 576px) {
+  .logOutput {
+    height: 80px;
+  }
+
+  .commandInput {
+    font-size: 1rem;
+  }
+}
+
+
 /* Form control placeholder */
 .terminal input::placeholder {
   color: #00ff7f;

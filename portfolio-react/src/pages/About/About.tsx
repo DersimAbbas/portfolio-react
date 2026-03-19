@@ -59,13 +59,8 @@ export default function About() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="d-flex justify-content-center mt-5 me-auto">
-        <div
-          className="d-flex justify-content-start gap-3"
-          style={{ zIndex: 500 }}
-        >
-          <NavigateButtons />
-        </div>
+      <div className="d-flex flex-wrap justify-content-center mt-5 gap-3 pb-5" style={{ zIndex: 500 }}>
+        <NavigateButtons />
       </div>
 
       <DevOpsTerminal />

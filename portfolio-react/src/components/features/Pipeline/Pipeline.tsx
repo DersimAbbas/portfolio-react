@@ -149,7 +149,7 @@ const PipeLine = forwardRef<PipeLineHandle, PipeLineProps>(
         {/* Progress Bar */}
         {showProgressBar ? (
           <div className="d-flex justify-content-center mt-3">
-            <div className="progress" style={{ height: '24px', width: '50%' }}>
+            <div className="progress" style={{ height: '24px', width: '80%', maxWidth: '500px' }}>
               <div
                 ref={progressBarRef}
                 className="progress-bar bg-success"

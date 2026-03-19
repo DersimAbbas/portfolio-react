@@ -59,7 +59,7 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div
-          className="row row-cols-auto row-cols-md-1 row-cols-lg-3 g-3 gap-3 d-flex justify-content-center mx-auto"
+          className="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-3 gap-3 d-flex justify-content-center mx-auto"
           style={{ maxWidth: '1500px' }}
         >
           {filteredProjects.map((skill) => (
@@ -71,7 +71,7 @@ export default function Projects() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="d-flex justify-content-center mt-3" style={{ paddingBottom: '250px' }}>
+      <div className="d-flex flex-wrap justify-content-center mt-3 gap-3 pb-5 mb-5">
         <NavigateButtons />
       </div>
 

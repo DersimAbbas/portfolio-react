@@ -96,7 +96,7 @@ export default function Skills() {
       </div>
 
       {/* Navigation Buttons - outside container for proper spacing */}
-      <div className="d-flex justify-content-center gap-4" style={{ paddingBottom: '250px' }}>
+      <div className="d-flex flex-wrap justify-content-center gap-3 pb-5 mb-5">
         <NavigateButtons />
       </div>
 

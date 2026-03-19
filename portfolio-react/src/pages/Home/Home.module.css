@@ -20,3 +20,13 @@
   white-space: normal;
   display: inline-block;
 }
+
+@media (max-width: 576px) {
+  .profileImage {
+    max-width: 150px !important;
+  }
+
+  .typewriterText {
+    font-size: 1rem;
+  }
+}

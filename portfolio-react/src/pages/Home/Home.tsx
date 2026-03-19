@@ -69,7 +69,7 @@ export default function Home() {
           <img
             src="/images/Dersim2_converted.webp"
             crossOrigin="anonymous"
-            className={`rounded-circle animate__animated animate__fadeInLeft m-5 ${styles.profileImage}`}
+            className={`rounded-circle animate__animated animate__fadeInLeft m-3 m-md-5 ${styles.profileImage}`}
             alt="Dersim Abbas Profile"
             style={{ maxWidth: '250px' }}
           />
@@ -107,7 +107,7 @@ export default function Home() {
 
           {/* Title */}
           <p className="display-6 text-light">
-            Hi! I'm Dersim Abbas - Junior DevOps Engineer
+            Hi! I'm Dersim Abbas - Cloud / DevOps Engineer
           </p>
 
           {/* Typewriter Tagline */}
@@ -139,7 +139,7 @@ export default function Home() {
 
           {/* Navigation Buttons */}
           <div
-            className="p-2 d-flex justify-content-start gap-2"
+            className="p-2 d-flex flex-wrap justify-content-center gap-2"
             style={{ zIndex: 50 }}
           >
             <NavigateButtons />

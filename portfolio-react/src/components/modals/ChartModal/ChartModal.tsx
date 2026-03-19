@@ -79,7 +79,7 @@ const ChartModal = forwardRef<ChartModalHandle, ChartModalProps>(
 
       // Extract months from experience string (e.g., "12 months" -> 12)
       const experienceMonths =
-        parseInt(selectedSkill.techExperience.replace(/\D/g, ''), 10) || 1;
+        parseInt((selectedSkill.techExperience || '').replace(/\D/g, ''), 10) || 1;
 
       const labels: string[] = [];
       const skillValues: number[] = [];
@@ -170,7 +170,7 @@ const ChartModal = forwardRef<ChartModalHandle, ChartModalProps>(
             </div>
             <div
               className="modal-body"
-              style={{ maxWidth: '800px', minWidth: '320px' }}
+              style={{ maxWidth: '800px' }}
             >
               {selectedSkill && (
                 <Line data={buildChartData()} options={chartOptions} />

@@ -1,4 +1,5 @@
 import { TechsModel } from '../../../types';
+import { getTechCategory } from '../../../utils/techCategoryMap';
 import styles from './SkillsIac.module.css';
 
 interface SkillsIacProps {
@@ -35,15 +36,11 @@ export default function SkillsIac({ skills }: SkillsIacProps) {
                     "{skill.technologies}"
                   </span>
                   {'\n    '}
-                  <span className={styles.tfProperty}>experience</span>
-                  {'  = '}
+                  <span className={styles.tfProperty}>category</span>
+                  {'    = '}
                   <span className={styles.tfString}>
-                    "{skill.techExperience}"
+                    "{getTechCategory(skill.technologies)}"
                   </span>
-                  {'\n    '}
-                  <span className={styles.tfProperty}>skill_level</span>
-                  {' = '}
-                  <span className={styles.tfString}>"{skill.level}"</span>
                   {'\n}'}
                 </code>
               </pre>

@@ -4,11 +4,11 @@ export interface TechsModel {
   description: string | null;
   githubUrl: string | null;
   technologies: string;
-  techExperience: string;
+  techExperience: string | null;
   skillLevel: number;
   image: string | null;
   demoUrl: string | null;
-  level: string;
+  level: string | null;
 }
 
 // Utility functions for computed properties

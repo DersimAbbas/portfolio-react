@@ -4,6 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 255, 127, 0.5);
   max-width: 250px;
+  width: 100%;
   color: #fff;
   margin: 10px;
   opacity: 0;
@@ -20,6 +21,20 @@
   min-width: 40px;
   height: 4px;
   background-color: #00ff7f;
+}
+
+@media (max-width: 576px) {
+  .stageCard {
+    max-width: 100%;
+    margin: 6px 0;
+  }
+
+  .stageConnector {
+    min-width: 0;
+    width: 4px;
+    height: 20px;
+    min-height: 20px;
+  }
 }
 
 .spinnerIcon {

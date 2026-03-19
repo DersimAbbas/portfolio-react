@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TechsModel } from '../../../types';
 import { getTechBackgroundClass } from '../../../utils/techColorMap';
+import { getTechCategory } from '../../../utils/techCategoryMap';
 import styles from './SkillCard.module.css';
 
 interface SkillCardProps {
@@ -68,16 +69,11 @@ export default function SkillCard({
       {/* Card Header */}
       <div className="card-header d-flex justify-content-between text-dark">
         <h5 className="fw-bold">{skill.technologies}</h5>
-        <img
-          src={`/images/${skill.image || 'favicon.png'}`}
-          style={{ maxWidth: '50px', maxHeight: '30px' }}
-          alt={skill.technologies}
-        />
       </div>
 
       {/* Card Body */}
       <div className="card-body">
-        <h5 className="card-title text-dark fw-semibold fs-4">{skill.level}</h5>
+        <span className="badge fs-6" style={{ backgroundColor: 'rgba(0, 0, 0, 0.35)', color: '#fff' }}>{getTechCategory(skill.technologies)}</span>
       </div>
 
       {/* Card Footer */}
@@ -100,7 +96,7 @@ export default function SkillCard({
                     type="text"
                     className="form-control mb-1"
                     placeholder="Experience"
-                    value={editedSkill.techExperience}
+                    value={editedSkill.techExperience || ''}
                     onChange={(e) =>
                       setEditedSkill({ ...editedSkill, techExperience: e.target.value })
                     }
@@ -115,15 +111,6 @@ export default function SkillCard({
                         ...editedSkill,
                         skillLevel: Number(e.target.value),
                       })
-                    }
-                  />
-                  <input
-                    type="text"
-                    className="form-control mb-1"
-                    placeholder="Level"
-                    value={editedSkill.level}
-                    onChange={(e) =>
-                      setEditedSkill({ ...editedSkill, level: e.target.value })
                     }
                   />
                   <input
